@@ -55,6 +55,7 @@ let jugadores = {
         trayectoria: "Malmo(1999-2001); Ajax(2001-2004); Juventus(2004-2006); Internazionale(2006-2009); FC Barcelona(2009-2010); A.C Milan(2010-2012); PSG(2012-2016); Manchester United(2016-2018); L.A Galaxy(2018-2019); A.C Milan(2020-actualmente)",
         fisico: "Mide 1,95m y pesa 95kg",
         valorDeMercado: "4 millones de euros",
+        imagen: 'https://images2.minutemediacdn.com/image/upload/c_crop,w_5000,h_2812,x_0,y_292/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/GettyImages/mmsport/90min_es_international_web/01g04pdz8r47edkcp3f6.jpg'
 
     },
     { 

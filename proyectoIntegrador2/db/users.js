@@ -4,7 +4,7 @@ let nombreUsuario = {
         {
             Usuario: "lionelscaloni_oficial",
             Email: "lscaloni@gmail.com",
-            Contraseña: "Mundial2022",
+            Contrasena: "Mundial2022",
             FechaDeNaciemiento: "16-05-1978",
             Equipo: "Boca",
             PuestoDeTrabajo: "Director tecnico",

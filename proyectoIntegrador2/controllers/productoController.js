@@ -10,8 +10,22 @@ const productoController = {
     },
 
     detalleProducto : function(req, res) {
-        
-        res.render('jugadores', { jugadores: jugadores.lista, comentarios: comentarios.lista});
+
+
+        let jugador;
+
+        for(let i = 0; i < jugadores.lista.length; i++) {
+            
+            if(req.params.id == jugadores.lista[i].id) {
+                //let jugador = jugadores.lista[i];
+                console.log(jugadores.lista[i])
+                jugador = jugadores.lista[i];
+            }
+
+        }
+
+        res.render('detalle-producto', {jugador: jugador});
+        //res.render('jugadores', { jugadores: jugadores.lista, comentarios: comentarios.lista});
     } //agrgear product add
 }
 
