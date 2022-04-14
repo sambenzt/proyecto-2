@@ -23,7 +23,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 //prefijos 
-app.use('/', indexRouter);
+app.use('/', indexRouter); //http://localhost:3000
 app.use('/productos', productRouter); //localhost:3000/productos/agregar
 app.use('/users', usersRouter);
 

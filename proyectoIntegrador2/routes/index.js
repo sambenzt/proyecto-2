@@ -3,7 +3,8 @@ var router = express.Router();
 
 const indexController = require ("../controllers/indexController");
 
-router.get("/", indexController.home);
-router.get("/resultados", indexController.resultados);
+router.get("/", indexController.home); 
+router.get("/resultados", indexController.resultados); http://localhost:3000/resultados
+
 
 module.exports = router;
