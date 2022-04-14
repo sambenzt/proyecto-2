@@ -6,27 +6,47 @@ const nombreUsuario = require('../db/users');
 const productoController = {
 
     agregarProducto : function(req,res){
-        res.render('product-add', {usuarios: nombreUsuario.lista }); //preguntar ESTOgi
+        res.render('agregar-producto', {usuarios: nombreUsuario.lista }); //preguntar ESTOgi
     },
 
     detalleProducto : function(req, res) {
-
 
         let jugador;
 
         for(let i = 0; i < jugadores.lista.length; i++) {
             
             if(req.params.id == jugadores.lista[i].id) {
-                //let jugador = jugadores.lista[i];
-                console.log(jugadores.lista[i])
                 jugador = jugadores.lista[i];
             }
 
         }
 
+        if(!jugador) {
+            return res.redirect('/');
+        }
+
         res.render('detalle-producto', {jugador: jugador});
-        //res.render('jugadores', { jugadores: jugadores.lista, comentarios: comentarios.lista});
-    } //agrgear product add
+    }, 
+
+    busquedaProducto:  function(req, res) {
+
+        console.log( req.query.search )
+
+        let jugadoresEncontrados = [];
+
+        for(let i = 0; i < jugadores.lista.length; i++) {
+            
+            let nombreMinuscula = jugadores.lista[i].nombre.toLowerCase();
+            let apellidoMinuscula = jugadores.lista[i].apellido.toLowerCase();
+            let busquedaMinuscula = req.query.search.toLowerCase();
+
+            if(nombreMinuscula.indexOf(busquedaMinuscula) != -1 || apellidoMinuscula.indexOf(busquedaMinuscula) != -1) {
+                jugadoresEncontrados.push(jugadores.lista[i]);
+            }
+        }
+
+        res.render('buscar-resultados', {jugadoresEncontrados: jugadoresEncontrados}); 
+    }
 }
 
 module.exports = productoController;

@@ -22,11 +22,21 @@ const usuarioController = {
 
         let usuario = req.query.usuario;
         let contrasena = req.query.contrasena;
+        let usuarioLog;
 
-        let user = nombreUsuario.lista[0];
+        
+        for(let i = 0; i < nombreUsuario.lista.length ; i++) {
+            
+            let user = nombreUsuario.lista[i];
+            
+            if(user.Contrasena == contrasena && user.Usuario == usuario) {
+                usuarioLog = user;
+            }
+        }
 
-        if(user.Contrasena == contrasena && user.Usuario == usuario) {
-            return res.redirect("/users/editar");
+
+        if(usuarioLog) {
+            return res.render("editar-usuario", {usuario: usuarioLog});
         }
         else{
             res.render("login", {error: 'usuario o contraseña invalida'});

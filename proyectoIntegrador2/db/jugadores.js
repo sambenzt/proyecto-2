@@ -26,7 +26,6 @@ let jugadores = {
         trayectoria: "Newells(1995-2000); FC Barcelona(2004-2021); PSG(2021-actualmente)",
         fisico: "Mide 1,69m y pesa 67kg",
         valorDeMercado: "60 millones de euros",
-        id: "2",
 
     },
     { 

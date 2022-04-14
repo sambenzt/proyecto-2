@@ -4,8 +4,33 @@
 <% include ./partials/head %>
 <body>
 	<!-- Header -->
-	<% include ./partials/header %>
+	<% include ./partials/headerLogueado %>
 	<!-- /Header -->
+
+	<section class="info-usuario container products-wrapper">
+		<div class="row">
+			<div class="img-container offset-3 col-2">
+				<img src="https://via.placeholder.com/150" alt="foto de perfil" class="foto-perfil">
+			</div>
+			<div class="data-container col-6">
+				<div class="d-flex align-items-center ">
+					<h1 class="main-title"><%= usuario.nombre %> <%= usuario.apellido %>
+						<a href="profile-edit.html">
+							<i class="fas fa-cog"></i>
+						</a>
+					</h1>
+					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+				</div>
+				<div>
+					<ul class="">
+						<li>8 productos</li>
+						<li>200 seguidores</li>
+						<li>300 comentarios</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -16,12 +41,14 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> <i> <br><br>
 				<form action="/users/registrar" method="get">
-					<input name="nombre" type="text" placeholder="nombre">
-					<input name="apellido" type="text" placeholder="apellido">
+					<input value="<%= usuario.nombre %>" name="nombre" type="text" placeholder="nombre">
+					<input value="<%= usuario.apellido %>" name="apellido" type="text" placeholder="apellido">
 					<input name="contrasena" type="password" placeholder="contraseña">
 					<input name="actualizar" type="submit" value="actualizar">
 				</form>
 			</h2>
+		</div>
+	</div>
 
 
 	<!-- footer -->
